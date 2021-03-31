@@ -32,4 +32,4 @@ The directory is searched recursively.
 Files with .gz extension will be included, but the script won't try to compress them.
 
 ### Dependencies
-Python 3
+Python 3.8 and above
