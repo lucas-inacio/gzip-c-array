@@ -79,17 +79,17 @@ def compress_files_in_dir(dir):
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Comprime os arquivos no diretório fornecido no formato gzip')
-    parser.add_argument('dir', nargs=1, help='Diretório dos arquivos a serem comprimidos')
+        description='Compress files in the given directory in gzip format')
+    parser.add_argument('dir', nargs=1, help='root directory of the tree you want to compress')
     parser.add_argument(
         '-c',
         dest='cfile',
         nargs=1,
-        help='Gera um arquivo de cabeçalho C com os dados dos arquivos comprimidos'
+        help="generates a C header file with byte data from the files found in dir"
     )
     parser.add_argument(
         '--root', dest='root',
-        help='Usa o diretório fornecido como parte da url gerada no arquivo C (padrão: falso)',
+        help='include the root directory as part of the resulting URL in the GzipData structure (default: false)',
         action=argparse.BooleanOptionalAction
     )
     args = parser.parse_args()
